@@ -8,16 +8,18 @@
     <title>Document</title>
     <style>
         .verde {
-            color:green
+            background-color:green;
+        }
+        .azul{
+            background-color: blue;
         }
     </style>
 </head>
 <body>
     <div id="app">
-        <a v-bind:href="site">Site</a>
-        <p v-bind:class="cor">Entendendo a diretiva v-bind</p>
-        <input type="text" v-bind:placeholder="instrucaoDePreenchimento" v-bind:value="valor">
-        <input type="checkbox" v-bind:checked="check">
+        {{ mensagem }}
+        <input type="text" @keyup="imprimirTexto('Enviando parâmetro', 5)">
+        <button @click="mensagemAlerta()">Botão</button>
     </div>
 
     <script>
@@ -25,13 +27,18 @@
         const vm = new Vue({
             el: '#app',
             data: {
-                site: 'https://jorgesantana.net.br',
-                cor: 'verde',
-                instrucaoDePreenchimento: 'Placeholder - Diretiva v-bind',
-                valor: 'Entendendo a diretiva v-bind',
-                check: true
+                xyz: true
             },
-            methods: {}
+            methods: {
+                imprimirTexto(t, n){
+                    console.log(t)
+                    console.log(n)
+                    console.log(this.xyz)
+                },
+                mensagemAlerta(){
+                    alert('Mensagem de alerta')
+                }
+            }
         })
 
     </script>
