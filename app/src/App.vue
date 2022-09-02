@@ -1,5 +1,12 @@
 <template>
-  <TheHeader/>
+  <TheHeader v-if="showHeader"/>
+
+  <div v-show="showName">
+      First Name: {{ firstName }} <br>
+      Last Name: {{ lastName }}
+  </div>
+
+    <div></div>
 
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App"/>
@@ -14,6 +21,16 @@ export default {
   components: {
     HelloWorld, 
     TheHeader,
+  },
+  data(){
+
+    return {
+     // ShowHeader: true,
+      firstName: 'Jon',
+      lastName: 'Snow',
+      showName: true,
+
+    }
   }
 }
 </script>

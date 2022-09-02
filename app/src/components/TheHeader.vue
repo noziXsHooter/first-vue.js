@@ -1,16 +1,19 @@
 <template>
-    <header class="back-ground">
+    <header class="header">
         Header
     </header>
 </template>
 
 <script>
 
-export default {
-        
-}
+    export default {
+            
+    }
 </script>
 
 <style>
-    .header{}
+    .header{
+        background: #000;
+        color: #fff;
+    }
 </style>
