@@ -1,4 +1,7 @@
 <template>
+
+      <BaseCard/> 
+
   <TheHeader v-if="showHeader"/>
 
   <div v-show="showName">
@@ -15,12 +18,14 @@
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import TheHeader from './components/TheHeader.vue'
+import BaseCard from './components/BaseCard.vue'
 
 export default {
   name: 'App',
   components: {
     HelloWorld, 
     TheHeader,
+    BaseCard,
   },
   data(){
 
