@@ -1,12 +1,22 @@
 <template>
-    <header class="header">
-        Header
-    </header>
+    
+
+    <div v-for-key="obj in todos"></div>
+
+
 </template>
 
 <script>
 
     export default {
+        name: 'App',
+        data(){
+            return{
+                todos: [{
+
+                }]
+            }
+        }
             
     }
 </script>
