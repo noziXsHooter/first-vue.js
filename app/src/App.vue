@@ -1,40 +1,40 @@
 <template>
 
-      <BaseCard/> 
-
-  <TheHeader v-if="showHeader"/>
-
-  <div v-show="showName">
-      First Name: {{ firstName }} <br>
-      Last Name: {{ lastName }}
-  </div>
-
-    <div></div>
-
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div>
+        <BaseAlert
+          v-if="showAlert"
+          :variant="variant"
+          @close="onClose()"
+        >
+            {{ text }}
+        </BaseAlert>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import TheHeader from './components/TheHeader.vue'
-import BaseCard from './components/BaseCard.vue'
+
+import BaseAlert from '@/components/BaseAlert.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld, 
-    TheHeader,
-    BaseCard,
-  },
+  components: { BaseAlert },
   data(){
-
     return {
-     // ShowHeader: true,
-      firstName: 'Jon',
-      lastName: 'Snow',
-      showName: true,
-
+      showAlert: true,
+      variant: 'success',
+      text: 'Seu formulário foi enviado com sucesso!',
+    }
+  },
+  beforeUpdate() {},
+  updated() {},
+  beforeCreate() {},
+  created() {},
+  beforeMount() {},
+  watch: {},
+  computed: {},
+  methods: {
+    onClose(){
+        this.showAlert = false
     }
   }
 }
